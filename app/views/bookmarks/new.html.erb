@@ -1,0 +1,12 @@
+<div class="banner">
+</div>
+
+<div class="container">
+  <h1>Create your bookmark in <strong><%= @list.name %></strong></h1>
+
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -10,6 +10,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
+  <nav class="navbar">
+    <div class="navbar-logoh1">
+      <%= image_tag "logo.jpeg", alt: "Le Logo" %>
+      <h1>Popcorn</h1>
+    </div>
+    <div>
+      <%= link_to "My lists", lists_path %>
+      <%= link_to "New list", new_list_path %>
+    </div>
+  </nav>
   <body>
     <%= yield %>
   </body>
