@@ -2,13 +2,20 @@
   <h1>Save any kind of movies</h1>
 </div>
 
-<h1>All your lists</h1>
-<%= link_to "New list",  new_list_path  %>
+<div class="container p-2">
 
-<% @lists.each do |list| %>
-  <%= link_to list_path(list) do %>
-    <div>
-      <h2><%= list.name%> - <%= list.bookmarks.count %></h2>
-    </div>
-  <% end %>
-<% end %>
+  <h1 class="p-3 text-center">All your lists</h1>
+
+  <div class="row justify-content-evenly gy-5">
+    <% @lists.each do |list| %>
+      <div class="col-12 col-md-5 col-lg-4 card-list shadow">
+        <%= link_to list_path(list) do %>
+          <div class="card-list" style="background-image: url('<%= list.imgurl %>'); background-size: cover;">
+            <h2><%= list.name.upcase%></h2>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
