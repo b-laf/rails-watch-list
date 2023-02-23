@@ -4,17 +4,29 @@
     <%= link_to "New bookmark", new_list_bookmark_path(@list), class:"link-new"  %>
 
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card-movie">
-        <div>
-          <h3><%= bookmark.comment %></h3>
-          <%= link_to bookmark_path(bookmark),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-regular fa-trash-can"></i>
-          <% end %>
-        </div>
-        <h4><%= bookmark.movie.title %></h4>
+      <div class="card-movie d-flex mt-3 mb-3 shadow rounded">
+
         <img src="<%= bookmark.movie.poster_url%>" alt="" style="width:200px;">
-        <p><%= bookmark.movie.overview %></p>
+
+        <div class="p-4 d-flex flex-column justify-content-between">
+          <div class="main-info">
+            <div class="d-flex align-items-center mb-4">
+              <h2><%= bookmark.movie.title %></h2>
+              <%= link_to bookmark_path(bookmark),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
+            <p><%= bookmark.movie.overview %></p>
+          </div>
+          <p><%= bookmark.comment %></p>
+        </div>
+
+
+
+
+
+
       </div>
     <% end %>
 
