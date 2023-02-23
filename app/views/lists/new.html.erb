@@ -1,10 +1,12 @@
 <div class="container">
-  <h1>Create your list</h1>
+  <div class="form-bck shadow">
+    <h1>Create your list</h1>
 
-  <%= simple_form_for(@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :imgurl %>
-    <%= f.submit %>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :imgurl %>
+      <%= f.submit %>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
