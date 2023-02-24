@@ -3,6 +3,7 @@
   width: 700px;
 
   h2 {
+    color: $bck2;
     margin: 0;
     padding: 0;
     margin-right: 10px;
@@ -11,5 +12,9 @@
   a {
     text-decoration: none;
     color: $bck3;
+  }
+
+  p {
+    color: $bck2;
   }
 }

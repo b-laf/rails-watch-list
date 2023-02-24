@@ -10,7 +10,7 @@
     <% @lists.each do |list| %>
       <div class="col-12 col-md-5 col-lg-4 card-list shadow">
         <%= link_to list_path(list) do %>
-          <div class="card-list" style="background-image: url('<%= list.imgurl %>'); background-size: cover;">
+          <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
             <h2><%= list.name.upcase%></h2>
           </div>
         <% end %>
